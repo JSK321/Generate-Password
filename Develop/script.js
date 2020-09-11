@@ -14,7 +14,6 @@ var symbols = ['~', '!', '#', '$', '%', '^', '&', '*', '-', '_']
 var newChar = [];
 
 //Button that opens prompt when clicked.
-document.querySelector('#generate').addEventListener('click', generatePassword);
 
 function generatePassword() {
 
@@ -40,19 +39,19 @@ function generatePassword() {
 
   // If the character type is selected, then the characters are stored into a new array.
   if (lowCase === true){
-    newChar.push(lowerCase);
+    newChar = newChar.concat(lowerCase);
   }
 
   if (upCase === true){
-    newChar.push(upperCase);
+    newChar = newChar.concat(upperCase);
   }
 
   if (num === true){
-    newChar.push(numbers);
+    newChar = newChar.concat(numbers);
   }
 
   if (specChar === true){
-    newChar.push(symbols);
+    newChar = newChar.concat(symbols);
   }
 
   // console.log(newCharacters) <-- test to see if characters appear in newCharacters array.
@@ -67,14 +66,16 @@ function generatePassword() {
   }
 
   // console.log(passLength) <-- test to see if passLength is confirmed.
+  // console.log(newChar) <-- test to see if newChar is concatenated.
 
-  var newPassword = "";
+  var password = "";
 
-  for (i=0; i<passLength.length; i++){
-    newPassword = newPassword + newChar.charAt(Math.floor(Math.random() *newChar.length));
+  for (i=0; i<passLength; i++){
+    password = password + newChar[Math.floor(Math.random() * newChar.length)];
+   
   }
 
-  return newPassword;
+  return password;
 }
 
 
@@ -88,5 +89,6 @@ function writePassword() {
 
 
   // Add event listener to generate button
-  generateBtn.addEventListener("click", writePassword);
+ 
 }
+generateBtn.addEventListener("click", writePassword);
