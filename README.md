@@ -1,1 +1,5 @@
 # Generate-Password
+
+This assignment was definitely a challenge for me. I orginally did not know how to begin, but once I began to pseudocode, it became easier to understand. Pseudocoding is very helpful as I was able to start the assignment one step at a time and build on it as the codes started to work. 
+
+The generator starts when the user presses the generate password button. The user is then prompted with the passwords criteria in which they can choose to include lower case letters, upper case letters, numbers, and even special characters. At least one type of character must be chosen or else the user is prompted to choose a type of character again. The password must be 8 to 129 characters in length, if the user tries to enter a character that is not a number in the password length, then they are prompted to enter a password length between 8 and 129 until a number character is entered. Once all prompts have been answered and all the conditions have been met, a random password is generated and will appear in the text box.
